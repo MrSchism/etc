@@ -39,12 +39,14 @@ switch ($ans) {
             New-ItemProperty "$key" -Name "DisableTaskMgr" -Value 0 -PropertyType "DWord" > $null
             $title
             "Task Manager is now able to be toggled."
+            ''
             }
     1 {md $key > $null
             cls
             New-ItemProperty "$key" -Name "DisableTaskMgr" -Value 0 -PropertyType "DWord" >$null
             $title
             "Task Manager is now able to be toggled."
+            ''
             }
     "no" {"Feel free to change your mind any time..."
             exit}
@@ -117,5 +119,5 @@ if ($tog -eq 1) {
                     "Feel free to change your mind any time..."
                     exit}
 
-}
+  }
 }
