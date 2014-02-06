@@ -65,23 +65,28 @@ $tog = 1}
 
 # Offers to enable or disable based on the state of $tog
 if ($tog -eq 0) {
-    'Would you like to disable Task Manager?'
+    'Would you like to DISABLE Task Manager?'
     ''
     '1. yes'
     '2. no'
     $zen = read-host
         switch ($zen) {
             "yes" {set-itemproperty -path $key -name DisableTaskMgr -value 1
+                    ''
                     'Task Manager has been DISABLED.'
                     }
             1 {set-itemproperty -path $key -name DisableTaskMgr -value 1
+                    ''
                     'Task Manager has been DISABLED.'
                     }
-            "no" {"Feel free to change your mind any time..."
+            "no" {''
+                    "Feel free to change your mind any time..."
                     exit}
-            2 {"Feel free to change your mind any time..."
+            2 {''
+                    "Feel free to change your mind any time..."
                     exit}
-            default {"Feel free to change your mind any time..."
+            default {''
+                    "Feel free to change your mind any time..."
                     exit}
 
   }
@@ -94,16 +99,21 @@ if ($tog -eq 1) {
     $zen = read-host
         switch ($zen) {
             "yes" {set-itemproperty -path $key -name DisableTaskMgr -value 0
+                    ''
                     'Task Manager has been ENABLED.'
                     }
             1 {set-itemproperty -path $key -name DisableTaskMgr -value 0
+                    ''
                     'Task Manager has been ENABLED.'
                     }
-            "no" {"Feel free to change your mind any time..."
+            "no" {''
+                    "Feel free to change your mind any time..."
                     exit}
-            2 {"Feel free to change your mind any time..."
+            2 {''
+                    "Feel free to change your mind any time..."
                     exit}
-            default {"Feel free to change your mind any time..."
+            default {''
+                    "Feel free to change your mind any time..."
                     exit}
 
 }
