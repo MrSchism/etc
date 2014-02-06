@@ -26,8 +26,9 @@ $title
 
 # Check for key existence and offer to make it if absent.
 if(!(Get-ItemProperty $key -Name DisableTaskMgr -ea 0)){
-'Task Manager is not controlled by registry'
-'would you like to create the registry value?'
+'Task Manager is not controlled by registry.'
+'Would you like to create the registry value?'
+''
 '1. yes'
 '2. no'
 $ans = read-host
