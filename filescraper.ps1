@@ -3,14 +3,15 @@
 # File Scraper written by: 
 #   Joshua "MrSchism" Embrey [mrschism@sdf.org]
 #   Joseph "Arcarna" Preston [jpreston86@gmail.com]
-# Intial commit: February 10, 2014 (20140210)
-# Current version: February 10, 2014 (20140210)
+# Intial commit: February 10, 2014
+# Current version: February 10, 2014
 #
 # Purpose:	File scraper checks a file selected by the user and		  
 # 		searches for all instances of a string or values supplied 
 # 		by the user.  Initially designed to find all instances of 
 # 		"<div role="note">", the text in it, and "</div>"	      
 ######################################################################################
+
 # Declare variables
 $cycle = "yes"                 # Allows script to be re-run without re-calling it
 $file = ""                     # File to be searched
@@ -59,7 +60,8 @@ while ($cycle -eq "yes") {
     # Determine what we are scraping for
     echo "------------------------------------------------"
     echo "`n`nWhat would you like to find?"
-    $find = read-host "Find"
+    while ($find -eq "") {
+    $find = read-host "Find"}
 
 
     # Scrape $file for $find based on $type
