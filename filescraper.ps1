@@ -1,14 +1,16 @@
-###########################################################################
-#     Title: 	File Scraper											  #
-# Author(s):	Joshua "MrSchism" Embrey <mrschism@sdf.org>				  #
-#      Date:	February 10, 2014 (20140210)							  #
-# 																		  #
-# 	Purpose:	File scraper checks a file selected by the user and		  #
-# 				searches for all instances of a string or values supplied #
-# 				by the user.  Initially designed to find all instances of #
-# 				"<div role="note">", the text in it, and "</div>"	      #
-###########################################################################
 
+######################################################################################
+# File Scraper written by: 
+#   Joshua "MrSchism" Embrey [mrschism@sdf.org]
+#   Joseph "Arcarna" Preston [jpreston86@gmail.com]
+# Intial commit: February 10, 2014 (20140210)
+# Current version: February 10, 2014 (20140210)
+#
+# Purpose:	File scraper checks a file selected by the user and		  
+# 		searches for all instances of a string or values supplied 
+# 		by the user.  Initially designed to find all instances of 
+# 		"<div role="note">", the text in it, and "</div>"	      
+######################################################################################
 # Declare variables
 $cycle = "yes"                 # Allows script to be re-run without re-calling it
 $file = ""                     # File to be searched
