@@ -1,0 +1,86 @@
+###########################################################################
+#     Title: 	File Scraper											  #
+# Author(s):	Joshua "MrSchism" Embrey <mrschism@sdf.org>				  #
+#      Date:	February 10, 2014 (20140210)							  #
+# 																		  #
+# 	Purpose:	File scraper checks a file selected by the user and		  #
+# 				searches for all instances of a string or values supplied #
+# 				by the user.  Initially designed to find all instances of #
+# 				"<div role="note">", the text in it, and "</div>"	      #
+###########################################################################
+
+# Declare variables
+$cycle = "yes"                 # Allows script to be re-run without re-calling it
+$file = ""                     # File to be searched
+$find = ""                     # Value to be found
+$type = ""                     # Type of data to find
+$valid = 1,"string",2,"RegEx"  # Allowed responses
+$result = ""                   # Output results
+$output = ""                   # How to output the results
+$again = ""                    # Search for another string
+
+
+# Main loop
+while ($cycle -eq "yes") {
+    
+    # Determine what file to scrape
+    cls
+    echo "Which file would you like to scrape?"
+    while ($file -eq "") {
+    $file = read-host "File"
+    }
+    
+
+    # Determine type of scraping will need to be done
+    echo "------------------------------------------------"
+    echo "`n`nWhich of the following will you be scraping for:"
+    echo ""
+    echo "1. String"
+    echo "2. RegEx"
+    while ($valid -notcontains $type) {
+    $type = read-host "`n`nPlease select which you will be scraping for"
+    }
+
+    # Set string and regex to their numerical values for simplicity
+    if ($type -eq "string") {
+        $type = 1
+        echo "`n Scraping for a String"
+    }
+    
+    if ($type -eq "regex") {
+        $type = 2
+        echo "`n`n Scraping for a RegEx"
+    }
+
+        
+
+    # Determine what we are scraping for
+    echo "------------------------------------------------"
+    echo "`n`nWhat would you like to find?"
+    $find = read-host "Find"
+
+
+    # Scrape $file for $find based on $type
+    switch ($type) {
+        1 {
+            push-location
+            cd "C:\"
+            $result = get-content $file | select-string -simple $find
+            echo "$result"
+            pop-location
+            read-host
+        }
+        
+        2 {
+            push-location
+            cd "C:\"
+            $result = get-content $file | select-string $find
+            echo "$result"
+            pop-location
+            read-host
+        }
+
+
+    }
+
+}
