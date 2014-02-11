@@ -95,7 +95,7 @@ while ($cycle -eq "yes") {
     echo "------------------------------------------------"
     while (($answer -ne "y") -and ($answer -ne "n")) {
         $answer =  read-host "Would you like to search again (y/n)?"}
-    if $($answer -eq "n") {
+    if ($answer -eq "n") {
         $cycle = "no"
     }
     
