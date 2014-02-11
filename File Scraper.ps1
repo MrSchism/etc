@@ -2,8 +2,8 @@
 # File Scraper written by: 
 #   Joshua "MrSchism" Embrey [mrschism@sdf.org]
 #   Joseph "Arcarna" Preston [jpreston86@gmail.com]
-# Intial commit: February 10, 2014
-# Current version: February 10, 2014
+# Intial commit: February 10, 2014 (20140210)
+# Current version: February 11, 2014(20140211)
 #
 # Purpose:	File scraper checks a file selected by the user and		  
 # 		searches for all instances of a string or values supplied 
