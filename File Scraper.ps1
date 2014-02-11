@@ -23,10 +23,10 @@ $again = ""                    # Search for another string
 
 
 # Main loop
+cls
 while ($cycle -eq "yes") {
     
     # Determine what file to scrape
-    cls
     echo "Which file would you like to scrape?"
     while ($file -eq "") {
     $file = read-host "File"
@@ -34,13 +34,14 @@ while ($cycle -eq "yes") {
     
 
     # Determine type of scraping will need to be done
-    echo "------------------------------------------------"
+    echo "--------------------------------------------------"
     echo "`n`nWhich of the following will you be scraping for:"
     echo ""
     echo "1. String"
     echo "2. RegEx"
+    echo "`n`n"
     while ($valid -notcontains $type) {
-    $type = read-host "`n`nPlease select which you will be scraping for"
+    $type = read-host "Please select which you will be scraping for"
     }
 
     # Set string and regex to their numerical values for simplicity
@@ -57,10 +58,11 @@ while ($cycle -eq "yes") {
         
 
     # Determine what we are scraping for
-    echo "------------------------------------------------"
+    echo "--------------------------------------------------"
     echo "`n`nWhat would you like to find?"
     while ($find -eq "") {
-    $find = read-host "Find"}
+        $find = read-host "Find"
+        }
 
 
     # Scrape $file for $find based on $type
@@ -71,32 +73,43 @@ while ($cycle -eq "yes") {
             push-location
             cd "C:\"
             $result = get-content $file | select-string -simple $find
-            echo "------------------------------------------------"
+            echo "--------------------------------------------------"
             echo "$result"
             pop-location
-            read-host
+            
         }
         
         # For RegEx searches
         2 {
             push-location
             cd "C:\"
-            echo "------------------------------------------------"
+            echo "--------------------------------------------------"
             $result = get-content $file | select-string $find
             echo "$result"
             pop-location
-            read-host
+            
         }
     
     
     }
     
     # Prompt to search again or exit
-    echo "------------------------------------------------"
-    while (($answer -ne "y") -and ($answer -ne "n")) {
-        $answer =  read-host "Would you like to search again (y/n)?"}
-    if ($answer -eq "n") {
+    echo "--------------------------------------------------"
+    while (($again -ne "y") -and ($again -ne "n")) {
+        $again =  read-host "Would you like to search again? (y/n)"}
+    if ($again -eq "n") {
         $cycle = "no"
+    }
+    else {
+        $file = ""
+        $find = ""
+        $type = ""
+        $result = ""
+        $output = ""
+        $again = ""
+        echo "####################NEW SEARCH####################"
+        echo "--------------------------------------------------"
+        echo ""
     }
     
     
