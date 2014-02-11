@@ -1,4 +1,3 @@
-
 ######################################################################################
 # File Scraper written by: 
 #   Joshua "MrSchism" Embrey [mrschism@sdf.org]
@@ -66,25 +65,39 @@ while ($cycle -eq "yes") {
 
     # Scrape $file for $find based on $type
     switch ($type) {
+        
+        # For string searches
         1 {
             push-location
             cd "C:\"
             $result = get-content $file | select-string -simple $find
+            echo "------------------------------------------------"
             echo "$result"
             pop-location
             read-host
         }
         
+        # For RegEx searches
         2 {
             push-location
             cd "C:\"
+            echo "------------------------------------------------"
             $result = get-content $file | select-string $find
             echo "$result"
             pop-location
             read-host
         }
-
-
+    
+    
     }
-
+    
+    # Prompt to search again or exit
+    echo "------------------------------------------------"
+    while (($answer -ne "y") -and ($answer -ne "n")) {
+        $answer =  read-host "Would you like to search again (y/n)?"}
+    if $($answer -eq "n") {
+        $cycle = "no"
+    }
+    
+    
 }
