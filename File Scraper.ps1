@@ -32,7 +32,7 @@ while ($cycle -eq "yes") {
     # Determine what file to scrape
     echo "Which file would you like to scrape?"
     while ($file -eq "") {
-    $file = read-host "File"
+        $file = read-host "File"
     }
     
 
@@ -44,7 +44,7 @@ while ($cycle -eq "yes") {
     echo "2. RegEx"
     echo "`n`n"
     while ($valid -notcontains $type) {
-    $type = read-host "Please select which you will be scraping for"
+        $type = read-host "Please select which you will be scraping for"
     }
 
     # Set string and regex to their numerical values for simplicity
@@ -65,7 +65,7 @@ while ($cycle -eq "yes") {
     echo "`n`nWhat would you like to find?"
     while ($find -eq "") {
         $find = read-host "Find"
-        }
+    }
 
 
     # Scrape $file for $find based on $type
@@ -75,7 +75,8 @@ while ($cycle -eq "yes") {
         1 {
             push-location
             cd "C:\"
-            $result = select-string -simple $find $file | select LineNumber,Line | format-table $format -auto -wrap | foreach-object {$_; echo ""}
+            $result = select-string -simple $find $file | select LineNumber,Line `
+                | format-table $format -auto -wrap | foreach-object {$_; echo ""} | out-string -width 1000000
             echo "--------------------------------------------------"
             echo "Scraping $file for `"$find`"..."
             $result
@@ -89,7 +90,8 @@ while ($cycle -eq "yes") {
             cd "C:\"
             echo "--------------------------------------------------"
             echo "Scraping $file for `"$find`"..."
-            $result = select-string $find $file | select LineNumber,Line | format-table $format -auto -wrap  | ForEach-Object {$_; echo ""}
+            $result = select-string $find $file | select LineNumber,Line `
+                | format-table $format -auto -wrap | foreach-object {$_; echo ""} | out-string -width 1000000
             $result
             pop-location
             
