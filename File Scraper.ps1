@@ -22,6 +22,9 @@ $output = ""                   # How to output the results
 $again = ""                    # Search for another string
 
 
+# Formatting for the output
+$format = @{expression={$_.linenumber};label="Line";width=5},@{expression={$_.line};label="Data"}
+
 # Main loop
 cls
 while ($cycle -eq "yes") {
@@ -72,10 +75,9 @@ while ($cycle -eq "yes") {
         1 {
             push-location
             cd "C:\"
-            select-string -simple $find $file | ForEach-Object {$_; echo ""}
+            $result = select-string -simple $find $file | select LineNumber,Line | format-table $format -auto -wrap | foreach-object {$_; echo ""}
             echo "--------------------------------------------------"
-            echo "Scraping $file for $find..."
-            
+            echo "Scraping $file for `"$find`"..."
             $result
             pop-location
             
@@ -86,8 +88,8 @@ while ($cycle -eq "yes") {
             push-location
             cd "C:\"
             echo "--------------------------------------------------"
-            echo "Scraping $file for $find..."
-            select-string $find $file | ForEach-Object {$_; echo ""}
+            echo "Scraping $file for `"$find`"..."
+            $result = select-string $find $file | select LineNumber,Line | format-table $format -auto -wrap  | ForEach-Object {$_; echo ""}
             $result
             pop-location
             
