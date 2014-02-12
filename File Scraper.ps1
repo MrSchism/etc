@@ -72,9 +72,11 @@ while ($cycle -eq "yes") {
         1 {
             push-location
             cd "C:\"
-            $result = get-content $file | select-string -simple $find
+            select-string -simple $find $file | ForEach-Object {$_; echo ""}
             echo "--------------------------------------------------"
-            echo "$result"
+            echo "Scraping $file for $find..."
+            
+            $result
             pop-location
             
         }
@@ -84,8 +86,9 @@ while ($cycle -eq "yes") {
             push-location
             cd "C:\"
             echo "--------------------------------------------------"
-            $result = get-content $file | select-string $find
-            echo "$result"
+            echo "Scraping $file for $find..."
+            select-string $find $file | ForEach-Object {$_; echo ""}
+            $result
             pop-location
             
         }
