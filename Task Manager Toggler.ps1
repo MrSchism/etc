@@ -2,8 +2,8 @@
 # Task Manager Toggler written by: 									
 #   Joshua "MrSchism" Embrey [mrschism@sdf.org]					
 #   Joseph "Arcarna" Preston [jpreston86@gmail.com]					
-# Intial commit: February 5, 2014 	(20140205)					
-# Current version: February 13, 2014	(20140213)						
+# Intial commit: February 5, 2014 							
+# Current version: February 12, 2014							
 ######################################################################################
 
 # Variables
@@ -13,9 +13,8 @@ $ans = ""
 $zen = ""
 $avail = 1
 $run = 1
-
 # Whitelist array for input
-$valid = "yes","no","y","n",1,2
+$valid = "yes","no","y","n",1,2,"q"
 
 $title = {########################
 # Task Manager Toggler #
@@ -40,6 +39,7 @@ while ($run -eq 1) {
         '1. yes'
         '2. no'
         ''
+        'Press Q to quit'
         while ($valid -notcontains $ans) {
             $ans = read-host
         }
@@ -61,6 +61,12 @@ while ($run -eq 1) {
             2 {''
                 "Feel free to change your mind any time..."
                 sleep 2
+                }
+            
+            "q" {'Exiting program...'
+                sleep 2
+                cls
+                $run = 0
                 }
             
             default {
@@ -88,6 +94,7 @@ while ($run -eq 1) {
             '1. yes'
             '2. no'
             ''
+            'Press Q to quit'
             while ($valid -notcontains $zen) {
                 $zen = read-host
             }
@@ -107,7 +114,13 @@ while ($run -eq 1) {
                     "Feel free to change your mind any time..."
                     sleep 2
                     }
-                
+                            
+                "q" {'Exiting program...'
+                    sleep 2
+                    cls
+                    $run = 0
+                    }
+
                 default {''
                     "Feel free to change your mind any time..."
                     sleep 2
@@ -120,6 +133,8 @@ while ($run -eq 1) {
             ''
             '1. yes'
             '2. no'
+            ''
+            'Press Q to quit'
             while ($valid -notcontains $zen) {
                 $zen = read-host
                 }
@@ -137,6 +152,13 @@ while ($run -eq 1) {
                         "Feel free to change your mind any time..."
                         sleep 2
                         }
+                        
+                    "q" {'Exiting program...'
+                        sleep 2
+                        cls
+                        $run = 0
+                        }
+
                     default {''
                         "Feel free to change your mind any time..."
                         sleep 2
