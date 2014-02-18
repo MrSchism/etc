@@ -2,7 +2,6 @@
  
 $run = 1
 $choice = ""
-$ps = 'cmd powershell.exe -ExecutionPolicy BYPASS -NoLogo'
  
 while ($run -eq 1) {
     while (($choice -ne (1..10)) -and $choice -ne "q") {
