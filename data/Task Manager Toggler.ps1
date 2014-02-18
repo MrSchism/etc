@@ -45,7 +45,7 @@ while ($run -eq 1) {
         }
     
         if (($ans -eq "y") -or ($ans -eq "yes")) {$ans = 1}
-        if (($ans -eq "n") -or ($abs -eq "no")) {$ans = 2}
+        if (($ans -eq "n") -or ($ans -eq "no")) {$ans = 2}
     
         switch ($ans) {
 
@@ -100,7 +100,7 @@ while ($run -eq 1) {
             }
         
             if (($ans -eq "y") -or ($ans -eq "yes")) {$ans = 1}
-            if (($ans -eq "n") -or ($abs -eq "no")) {$ans = 2}
+            if (($ans -eq "n") -or ($ans -eq "no")) {$ans = 2}
                 
                 switch ($zen) {
 
@@ -139,7 +139,7 @@ while ($run -eq 1) {
                 $zen = read-host
                 }
                 if (($ans -eq "y") -or ($ans -eq "yes")) {$ans = 1}
-                if (($ans -eq "n") -or ($abs -eq "no")) {$ans = 2}
+                if (($ans -eq "n") -or ($ans -eq "no")) {$ans = 2}
                 switch ($zen) {
 
                     1 {set-itemproperty -path $key -name DisableTaskMgr -value 0
