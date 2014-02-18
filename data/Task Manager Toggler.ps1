@@ -173,3 +173,8 @@ while ($run -eq 1) {
     
     }
 }
+
+## Comment this part out if running as stand-alone script##
+if ($run -eq 0) {
+    exit
+}
