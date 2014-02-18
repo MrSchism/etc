@@ -29,7 +29,7 @@ while ($run -eq 1) {
         $choice = read-host
         
         switch ($choice) {
-            1 {}
+            1 {cmd /c start powershell -NoExit -Command {$Host.UI.RawUI.WindowTitle = "Toggler"}
             2 {}
             3 {}
             4 {}
