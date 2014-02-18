@@ -6,11 +6,13 @@ Tools for Hodges University students, by Hodges University students.
 Collaborators
 -------------
 
-Joshua "MrSchism" Embrey (CIT.BS; Information Security)
-  <mrschism@sdf.org>
-Joseph "Arcarna" Preston (CIT.BS; Information Security)
-  <jpreston86@gmail.com>
-  
+Joshua "MrSchism" Embrey (CIT.BS; Information Security)  
+	<<mrschism@sdf.org>>  
+	
+Joseph "Arcarna" Preston (CIT.BS; Information Security)  
+	<<jpreston86@gmail.com>>  
+   
+-------------------------------------------------------------------------------------------------------
 Want to add your name to the list?  Working on a nifty tool?  Email MrSchism to sling one of your ideas.
 
 Tools
@@ -26,5 +28,5 @@ Languages
 
 Ideally, any language would work, but the best tools work out-of-the-box; that being said, currently we're looking at java and powershell.  If your tool is compiled, that works also.
 
-All projects must be open-source and wholly owned by you.
+All projects must be open source and wholly owned by you or your project team.
 
