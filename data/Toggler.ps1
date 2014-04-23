@@ -3,7 +3,9 @@
 #   Joshua "MrSchism" Embrey [mrschism@sdf.org]					
 #   Joseph "Arcarna" Preston [jpreston86@gmail.com]					
 # Intial commit: February 5, 2014 							
-# Current version: February 12, 2014							
+# Current version: February 12, 2014	
+# 
+# Purpose:  Check for and toggle registry value that disables task manager
 ######################################################################################
 
 # Variables
