@@ -1,5 +1,5 @@
-HodgeWarez
-==========
+StudentTools
+============
 
 Tools for Hodges University students, by Hodges University students.
 
@@ -17,7 +17,7 @@ Want to add your name to the list?  Working on a nifty tool?  Email MrSchism to 
 
 Tools
 -----
-1. Task Manager Toggler - A tool to enable/disable task manager while not in the FSoT labs
+1. Task Manager Toggler - A tool to enable/disable task manager while not in the FSoT labs/library
 2. Clipboard Logger - A tool for logging clipboard data; great for collecting references and quotes.
 3. File Scraper - A tool used to search for and return data in documents
 
